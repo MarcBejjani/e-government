@@ -9,7 +9,7 @@ const SignUp = () => {
       password: "",
       repeat: "",
       remember: true
-  })
+  }) 
 
   function handleChange(event) {
       const {name, value, type, checked} = event.target
