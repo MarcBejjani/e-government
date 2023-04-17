@@ -10,7 +10,7 @@ return (
 		height: '100vh'
 	}}
 	>
-	<h1>Welcome to GeeksforGeeks</h1>
+	<h1>Welcome to e-government</h1>
 	</div>
 );
 };
