@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./styles/signup.css";
 
-const SignUp = () => {
+const SignIn = () => {
+
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
       ID: "",
       email: "",
       password: "",
-      repeat: "",
-      remember: true
   }) 
 
   function handleChange(event) {
@@ -21,19 +23,17 @@ const SignUp = () => {
 
   function handleSubmit(event) {
       event.preventDefault()
-      if(formData.password === formData.repeat){
-        console.log("Matching")
-      }else{
-        console.log('no')
-        return
-      }
   }
+
+  useEffect(() => {
+    localStorage.setItem("name", JSON.stringify(formData.ID));
+  }, [formData.ID]);
 
   return (
     <form onSubmit={handleSubmit} style={{ border: "1px solid #ccc" }}>
       <div className="container">
-        <h1>Sign Up</h1>
-        <p>Please fill in this form to create an account.</p>
+        <h1>Sign In</h1>
+        <p>Please sign in</p>
         <hr></hr>
 
         <label htmlFor="id">
@@ -58,43 +58,17 @@ const SignUp = () => {
           required
         />
 
-        <label htmlFor="psw-repeat">
-          <b>Repeat Password</b>
-        </label>
-        <input
-          type="password"
-          onChange={handleChange}
-          value={formData.repeat}
-          placeholder="Repeat Password"
-          name="repeat"
-          required
-        />
-
-        <label htmlFor="remember">
-          <input
-          id="remember"
-          onChange={handleChange}
-            type="checkbox"
-            checked={formData.remember}
-            name="remember"
-            value={formData.checked}
-            style={{ marginBottom: "15px" }}
-          />{" "}
-          Remember me
-        </label>
-
         <div className="clearfix">
           <button type="button" className="cancelbtn">
             Cancel
           </button>
           <button type="submit" className="signupbtn">
-            Sign Up
+            Sign In
           </button>
         </div>
       </div>
     </form>
-    
   );
 };
 
-export default SignUp;
+export default SignIn;
