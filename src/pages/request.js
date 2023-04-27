@@ -1,16 +1,12 @@
 import React from 'react';
+import './styles/request.css'
 
-const AskRequest = () => {
+const AskRequest = (props) => {
 return (
-	<div
-	style={{
-		display: 'flex',
-		justifyContent: 'Right',
-		alignItems: 'Right',
-		height: '100vh'
-	}}
-	>
-	<h1>Ask request</h1>
+	<div>
+		<h1 id="title">
+			Request a Form
+		</h1>
 	</div>
 );
 };

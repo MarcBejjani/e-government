@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./styles/signup.css";
 
 const SignUp = () => {
+
+  const navigate = useNavigate();
+
 
   const [formData, setFormData] = useState({
       ID: "",
@@ -23,11 +27,16 @@ const SignUp = () => {
       event.preventDefault()
       if(formData.password === formData.repeat){
         console.log("Matching")
+        navigate('/')
       }else{
         console.log('no')
         return
       }
   }
+
+  useEffect(() => {
+    localStorage.setItem("name", JSON.stringify(formData.ID));
+  }, [formData.ID]);
 
   return (
     <form onSubmit={handleSubmit} style={{ border: "1px solid #ccc" }}>

@@ -23,6 +23,7 @@ const SignIn = () => {
 
   function handleSubmit(event) {
       event.preventDefault()
+      navigate('/')
   }
 
   useEffect(() => {

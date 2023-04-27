@@ -1,16 +1,12 @@
 import React from 'react';
+import './styles/fees.css'
 
-const Fees = () => {
+const Fees = (props) => {
 return (
-	<div
-	style={{
-		display: 'flex',
-		justifyContent: 'Center',
-		alignItems: 'Right',
-		height: '100vh'
-	}}
-	>
-	<h1>Pay your fees</h1>
+	<div>
+		<h1 id="title">
+			Here is a list of your outstanding fees {props.name}!
+		</h1>
 	</div>
 );
 };

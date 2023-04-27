@@ -1,16 +1,12 @@
 import React from 'react';
+import './styles/book.css'
 
-const Book = () => {
+const Book = (props) => {
 return (
-	<div
-	style={{
-		display: 'flex',
-		justifyContent: 'Right',
-		alignItems: 'Right',
-		height: '100vh'
-	}}
-	>
-	<h1>Book Appointment</h1>
+	<div>
+		<h1 id="title">
+			Book
+		</h1>
 	</div>
 );
 };
