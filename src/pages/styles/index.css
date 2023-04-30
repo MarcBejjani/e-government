@@ -1,5 +1,23 @@
 .intro{
-    background: aquamarine;
-    padding: 0;
+    text-align: center;
 }
 
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #00ff3c;
+    color: white;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none !important;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 10px
+  }
+  

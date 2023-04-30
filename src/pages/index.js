@@ -12,8 +12,6 @@ return (
 		<table>
 			<tr>
 				<td><a href="sign-up">Sign up</a></td>
-			</tr>
-			<tr>
 				<td><a href="signin">Sign in</a></td>
 			</tr>
 		</table>
