@@ -1,16 +1,12 @@
 import React from 'react';
+import './styles/locations.css'
 
-const Location = () => {
+const Location = (props) => {
 return (
-	<div
-	style={{
-		display: 'flex',
-		justifyContent: 'Right',
-		alignItems: 'Right',
-		height: '100vh'
-	}}
-	>
-	<h1>Govt Location</h1>
+	<div>
+		<h1 id="title">
+			List of Government Offices
+		</h1>
 	</div>
 );
 };

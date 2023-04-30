@@ -1,16 +1,12 @@
 import React from 'react';
+import './styles/vote.css'
 
-const Vote = () => {
+const Vote = (props) => {
 return (
-	<div
-	style={{
-		display: 'flex',
-		justifyContent: 'Right',
-		alignItems: 'Right',
-		height: '100vh'
-	}}
-	>
-	<h1>Vote</h1>
+	<div>
+		<h1 id="title">
+			Vote
+		</h1>
 	</div>
 );
 };

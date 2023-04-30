@@ -8,13 +8,16 @@ import {
   NavBtnLink,
 } from './NavbarElements';
   
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <>
       <Nav>
         <Bars />
   
         <NavMenu>
+          <NavLink to='/welcome' activeStyle>
+            Home
+          </NavLink>
           <NavLink to='/fees' activeStyle>
             Pay Your Fees
           </NavLink>
@@ -30,15 +33,16 @@ const Navbar = () => {
           <NavLink to='/vote' activeStyle>
             Vote
           </NavLink>
-          <NavLink to='/sign-up' activeStyle>
+          {/* <NavLink to='/sign-up' activeStyle>
             Sign Up
-          </NavLink>
+          </NavLink> */}
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
-        <NavBtn>
+        {/* <NavBtn>
           <NavBtnLink to='/signin'>Sign In</NavBtnLink>
-        </NavBtn>
+        </NavBtn> */}
+        <p>{props.name}</p>
       </Nav>
     </>
   );
