@@ -5,13 +5,35 @@ import "./styles/signup.css";
 
 const SignIn = () => {
 
+  const [data, setData] = useState([]);
+
+	const fetchData = () => {
+		fetch(`http://localhost:8000/api/v1/users`)
+		.then((response) => response.json())
+		.then((actualData) => {
+			setData(actualData.data);
+		})
+		.catch((err) => {
+			console.log(err.message);
+		});
+	};
+
+	useEffect(() => {
+		fetchData();
+
+	}, []);
+
+  var entries = data.map(function(val, index){
+    return {govID:val.govID, password:val.password, firstName: val.firstName};
+})
+
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
       ID: "",
-      email: "",
-      password: "",
+      password: ""
   }) 
+
 
   function handleChange(event) {
       const {name, value, type, checked} = event.target
@@ -21,14 +43,30 @@ const SignIn = () => {
       }))
   }
 
+
   function handleSubmit(event) {
       event.preventDefault()
-      navigate('/')
+      const numberOfEntries = entries.length
+      var x = 0;
+      var id;
+      var pass;
+      for(let i = 0; i<entries.length; i++){
+        id = entries[i].govID
+        pass = entries[i].password
+        if(formData.ID == id && formData.password == pass){
+          navigate('/welcome')
+        }else{
+          x++;
+        }
+      }
+      if(numberOfEntries == x){
+        alert('Wrong Combination!')
+      }
   }
 
   useEffect(() => {
-    localStorage.setItem("name", JSON.stringify(formData.ID));
-  }, [formData.ID]);
+    localStorage.setItem("name", JSON.stringify(formData));
+  }, [formData]);
 
   return (
     <form onSubmit={handleSubmit} style={{ border: "1px solid #ccc" }}>
@@ -41,11 +79,6 @@ const SignIn = () => {
           <b>ID</b>
         </label>
         <input type="text" onChange={handleChange} value={formData.ID} placeholder="Enter ID" name="ID" required />
-
-        <label htmlFor="email">
-          <b>Email</b>
-        </label>
-        <input type="text" onChange={handleChange}value={formData.email} placeholder="Enter Email" name="email" required />
 
         <label htmlFor="psw">
           <b>Password</b>

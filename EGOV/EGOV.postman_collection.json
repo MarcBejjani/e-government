@@ -1,0 +1,577 @@
+{
+	"info": {
+		"_postman_id": "1ca0679f-c424-4ced-98b2-48614031d935",
+		"name": "EGOV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22496745"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "govId",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "firstName",
+							"value": "Marc",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Bejjani",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Byblos",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "text"
+						},
+						{
+							"key": "dOB",
+							"value": "2001-1-1",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "M",
+							"type": "text"
+						},
+						{
+							"key": "hasVoted",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "voterID",
+							"value": "234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "Marc",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Bejjani",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Byblos",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "dOB",
+							"value": "2001-07-25",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "gender",
+							"value": "M",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "hasvoted",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/users/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Appointments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/appointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AppointmentByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/appointments/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"appointments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewAppointment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "appointmentID",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "appointment_time",
+							"value": "2023-7-23 12:00:00",
+							"type": "text"
+						},
+						{
+							"key": "locationID",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "govID",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "appointmentType",
+							"value": "Inquiry",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/appointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Locations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/locations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LocationByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/locations/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"locations",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TransactionByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/transactions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewTransaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "transactionID",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "senderAddress",
+							"value": "nnn",
+							"type": "text"
+						},
+						{
+							"key": "recieverAddress",
+							"value": "mmm",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "200",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "Parking ticket",
+							"type": "text"
+						},
+						{
+							"key": "timestamp",
+							"value": "2023-04-16 18:00:00",
+							"type": "text"
+						},
+						{
+							"key": "senderID",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetForms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/forms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"forms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FormByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/forms/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"forms",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RequestByID",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "NewRequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "requestID",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "govID",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "formID",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "requestDate",
+							"value": "2023-7-23 12:00:00",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"requests"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
