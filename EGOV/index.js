@@ -1,7 +1,6 @@
-
-
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
 
 const usersRouter = require("./routes/users.router")
@@ -11,6 +10,7 @@ const transactionsRouter = require("./routes/transactions.router")
 const formsRouter = require("./routes/forms.router")
 const requestsRouter = require("./routes/requests.router")
 
+app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
@@ -21,7 +21,11 @@ app.use("/api/v1/transactions", transactionsRouter)
 app.use("/api/v1/forms", formsRouter)
 app.use("/api/v1/requests", requestsRouter)
 
-app.listen(3000, () => console.log('App Available'));
+app.get('/message', (req, res) => {
+    res.json({ message: "Hello from server!" });
+});
+
+app.listen(8000, () => console.log('App Available'));
 
 
 

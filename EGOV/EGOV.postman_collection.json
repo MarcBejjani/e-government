@@ -40,7 +40,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/v1/users",
+					"raw": "http://localhost:8000/api/v1/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -61,7 +61,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/v1/users/1",
+					"raw": "http://localhost:8000/api/v1/users/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -133,7 +133,7 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/v1/users",
+					"raw": "http://localhost:8000/api/v1/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -198,7 +198,7 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/v1/users/2",
+					"raw": "http://localhost:8000/api/v1/users/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -220,7 +220,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/v1/appointments",
+					"raw": "http://localhost:8000/api/v1/appointments",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -241,7 +241,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/v1/appointments/1",
+					"raw": "http://localhost:8000/api/v1/appointments/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -293,7 +293,7 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/v1/appointments",
+					"raw": "http://localhost:8000/api/v1/appointments",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -314,7 +314,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/v1/locations",
+					"raw": "http://localhost:8000/api/v1/locations",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -335,7 +335,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/v1/locations/1",
+					"raw": "http://localhost:8000/api/v1/locations/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -357,7 +357,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/v1/transactions",
+					"raw": "http://localhost:8000/api/v1/transactions",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -378,7 +378,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/v1/transactions/1",
+					"raw": "http://localhost:8000/api/v1/transactions/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -440,7 +440,7 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/v1/transactions",
+					"raw": "http://localhost:8000/api/v1/transactions",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -461,7 +461,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/v1/forms",
+					"raw": "http://localhost:8000/api/v1/forms",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -482,7 +482,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/v1/forms/1",
+					"raw": "http://localhost:8000/api/v1/forms/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -504,7 +504,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/v1/requests",
+					"raw": "http://localhost:8000/api/v1/requests",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -558,7 +558,7 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/v1/requests",
+					"raw": "http://localhost:8000/api/v1/requests",
 					"protocol": "http",
 					"host": [
 						"localhost"

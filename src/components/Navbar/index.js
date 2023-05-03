@@ -42,7 +42,7 @@ const Navbar = (props) => {
         {/* <NavBtn>
           <NavBtnLink to='/signin'>Sign In</NavBtnLink>
         </NavBtn> */}
-        <p>{props.name}</p>
+        <p>{props.name.firstName}</p>
       </Nav>
     </>
   );

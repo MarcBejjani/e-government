@@ -9,10 +9,14 @@ const SignUp = () => {
 
   const [formData, setFormData] = useState({
       ID: "",
-      email: "",
+      firstName: "",
+      lastName: "",
+      address: "",
       password: "",
-      repeat: "",
-      remember: true
+      dOB: "",
+      gender: "",
+      hasVoted: "",
+      voterID: ""
   }) 
 
   function handleChange(event) {
@@ -23,19 +27,34 @@ const SignUp = () => {
       }))
   }
 
-  function handleSubmit(event) {
-      event.preventDefault()
-      if(formData.password === formData.repeat){
-        console.log("Matching")
-        navigate('/')
-      }else{
-        console.log('no')
-        return
-      }
+  function handleSubmit (event) {
+    event.preventDefault();
+    fetch('http://localhost:8000/api/v1/users', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+     },
+      body: JSON.stringify({
+        govId: formData.ID,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        address: formData.address,
+        password: formData.password,
+        dOB: null,
+        gender: null,
+        hasVoted: 0,
+        voterID: null
+    })
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+
+    navigate('/welcome')
   }
 
   useEffect(() => {
-    localStorage.setItem("name", JSON.stringify(formData.ID));
+    localStorage.setItem("name", JSON.stringify(formData));
   }, [formData.ID]);
 
   return (
@@ -50,10 +69,20 @@ const SignUp = () => {
         </label>
         <input type="text" onChange={handleChange} value={formData.ID} placeholder="Enter ID" name="ID" required />
 
-        <label htmlFor="email">
-          <b>Email</b>
+        <label htmlFor="fname">
+          <b>First Name</b>
         </label>
-        <input type="text" onChange={handleChange}value={formData.email} placeholder="Enter Email" name="email" required />
+        <input type="text" onChange={handleChange} value={formData.firstName} placeholder="First Name" name="firstName" required />
+
+        <label htmlFor="lname">
+          <b>Last Name</b>
+        </label>
+        <input type="text" onChange={handleChange} value={formData.lastName} placeholder="Last Name" name="lastName" required />
+
+        <label htmlFor="address">
+          <b>Address</b>
+        </label>
+        <input type="text" onChange={handleChange} value={formData.address} placeholder="Address" name="address" required />
 
         <label htmlFor="psw">
           <b>Password</b>
@@ -78,19 +107,6 @@ const SignUp = () => {
           name="repeat"
           required
         />
-
-        <label htmlFor="remember">
-          <input
-          id="remember"
-          onChange={handleChange}
-            type="checkbox"
-            checked={formData.remember}
-            name="remember"
-            value={formData.checked}
-            style={{ marginBottom: "15px" }}
-          />{" "}
-          Remember me
-        </label>
 
         <div className="clearfix">
           <button type="button" className="cancelbtn">
