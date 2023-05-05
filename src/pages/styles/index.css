@@ -2,12 +2,12 @@
     text-align: center;
 }
 
-table{
+.table{
     margin-left: auto;
     margin-right: auto;
 }
 
-td {
+.td {
     display: inline-block;
     padding: 6px 12px;
     background-color: #00ff3c;
