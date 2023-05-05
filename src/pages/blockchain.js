@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {ethers} from 'ethers';
 import {contractAbi, contractAddress} from '../constant/constant';
 import Login from '../components/blockchain/Login';
+//import Finished from './Components/Finished';
 import Connected from '../components/blockchain/Connected';
 import './styles/blockchain.css';
 
-function Vote() {
+function BlockChain() {
   const [provider, setProvider] = useState(null);
   const [account, setAccount] = useState(null);
   const [isConnected, setIsConnected] = useState(false);
@@ -156,4 +157,4 @@ function Vote() {
 
 }
 
-export default Vote;
+export default BlockChain;

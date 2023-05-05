@@ -9,10 +9,10 @@ return (
 			<br></br>
 			<p>Please login or sign up to access the application.</p>
 		</div>
-		<table>
+		<table className='table'>
 			<tr>
-				<td><a href="sign-up">Sign up</a></td>
-				<td><a href="signin">Sign in</a></td>
+				<td className='td'><a href="sign-up">Sign up</a></td>
+				<td className='td'><a href="signin">Sign in</a></td>
 			</tr>
 		</table>
 	</div>
