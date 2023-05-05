@@ -3,7 +3,7 @@ const pool = require ("../database/index")
 const appointmentsController = {
     getAll : async (req, res) => {
         try {
-            const [rows, fields] = await pool.query("select appointmentID, appointment_time, appointmentType, location.address, location.city, users.firstName, users.lastName from appointment inner join location on appointment.locationID = location.locationID Inner join users on appointment.govID = users.govID")
+            const [rows, fields] = await pool.query("select appointmentID, appointment_time, appointmentType, location.address, location.city, users.firstName, users.lastName, users.govID from appointment inner join location on appointment.locationID = location.locationID Inner join users on appointment.govID = users.govID")
             res.json({
                 data : rows
             })

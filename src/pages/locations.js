@@ -25,22 +25,30 @@ const Location = (props) => {
 
 
 	return (
-		<div className="App">
-		  <tbody>
-			<tr>
-			  <th>Name</th>
-			  <th>Brand</th>
-			  <th>Image</th>
-			  <th>Price</th>
-			  <th>Rating</th>
-			</tr>
-			{data.map((item, index) => (
-			  <tr key={index}>
-				<td>{item.locationID}</td>
-				<td>{item.address}</td>
-			  </tr>
-			))}
-		  </tbody>
+		<div className="table-wrapper">
+    		<table className="fl-table">
+        		<thead>
+        			<tr>
+						<th>ID</th>
+						<th>Address</th>
+						<th>City</th>
+						<th>Hours</th>
+						<th>Services Offered</th>
+        			</tr>
+        		</thead>
+        		<tbody>
+					{data.map((item, index) => (
+						<tr key={index}>
+							<td>{item.locationID}</td>
+							<td>{item.address}</td>
+							<td>{item.city}</td>
+							<td>{item.hours}</td>
+							<td>{item.servicesOffered}</td>
+						</tr>
+						))}
+        
+        		</tbody>
+    		</table>
 		</div>
 	  );
 };

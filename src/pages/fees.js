@@ -6,7 +6,7 @@ const Fees = (props) => {
 	const [data, setData] = useState([]);
 
 	const fetchData = () => {
-		fetch(`http://localhost:3000/api/v1/transactions`)
+		fetch(`http://localhost:8000/api/v1/transactions`)
 		.then((response) => response.json())
 		.then((actualData) => {
 			console.log(actualData);

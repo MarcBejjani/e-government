@@ -23,24 +23,37 @@ const Book = (props) => {
 		fetchData();
 	}, []);
 
+	var appointments = []
+	for(let i=0; i<data.length; i++){
+		if(data[i].govID == props.name.govID){
+			appointments.push(data[i])
+		}
+	}
+
 
 	return (
-		<div className="App">
-		  <tbody>
-			<tr>
-			  <th>Name</th>
-			  <th>Brand</th>
-			  <th>Image</th>
-			  <th>Price</th>
-			  <th>Rating</th>
-			</tr>
-			{data.map((item, index) => (
-			  <tr key={index}>
-				<td>{item.govID}</td>
-				<td>{item.firstName}</td>
-			  </tr>
-			))}
-		  </tbody>
+		<div className="table-wrapper">
+    		<table className="fl-table">
+        		<thead>
+        			<tr>
+						<th>ID</th>
+						<th>Appointment Type</th>
+						<th>Address</th>
+						<th>City</th>
+        			</tr>
+        		</thead>
+        		<tbody>
+					{appointments.map((item, index) => (
+						<tr key={index}>
+							<td>{item.appointmentID}</td>
+							<td>{item.appointmentType}</td>
+							<td>{item.address}</td>
+							<td>{item.city}</td>
+						</tr>
+						))}
+        
+        		</tbody>
+    		</table>
 		</div>
 	  );
 };

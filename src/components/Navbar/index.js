@@ -18,15 +18,15 @@ const Navbar = (props) => {
           <NavLink to='/welcome' activeStyle>
             Home
           </NavLink>
-          <NavLink to='/fees' activeStyle>
+          {/* <NavLink to='/fees' activeStyle>
             Pay Your Fees
-          </NavLink>
+          </NavLink> */}
           <NavLink to='/book' activeStyle>
             Book an Appointment
           </NavLink>
-          <NavLink to='/request' activeStyle>
+          {/* <NavLink to='/request' activeStyle>
             Ask request
-          </NavLink>
+          </NavLink> */}
           <NavLink to='/locations' activeStyle>
             Locations
           </NavLink>
